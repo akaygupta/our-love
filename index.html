@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise For You ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#190a17,#4b102e,#170b20);
+  color:white;text-align:center;
+  min-height:100vh;overflow-x:hidden;
+}
+.heart{
+ position:fixed;bottom:-30px;
+ color:#ff7ba8;animation:float 7s linear infinite;
+ pointer-events:none;z-index:0;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+main{position:relative;z-index:1;padding:55px 18px}
+h1{color:#ffb6cf;font-size:36px;margin:20px 0}
+p{line-height:1.8;color:#f8dce8}
+.card{
+ max-width:480px;margin:25px auto;
+ padding:30px 22px;border:1px solid #b75b80;
+ border-radius:25px;
+ background:#ffffff12;
+ box-shadow:0 0 35px #ff4c8930;
+}
+.envelope{
+ font-size:85px;cursor:pointer;
+ margin:25px;transition:.4s;
+}
+.envelope:hover{transform:scale(1.15)}
+button{
+ border:0;border-radius:30px;
+ background:linear-gradient(90deg,#ff548e,#bd3379);
+ color:white;padding:14px 27px;
+ font-size:16px;cursor:pointer;
+ margin:15px 5px;
+}
+.hidden{display:none}
+.message{
+ color:#ffe1ed;font-size:18px;
+ line-height:1.9;margin-top:20px;
+}
+.reason{
+ padding:13px;margin:12px 0;
+ background:#ffffff12;border-radius:14px;
+ color:#ffd6e5;
+}
+footer{padding:25px;color:#eab2ca}
+</style>
+</head>
+
+<body>
+
+<main>
+  <div style="font-size:35px">♡</div>
+  <p>A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+  <h1>Hey Beautiful ❤️</h1>
+
+  <div class="card">
+    <p>I made something special just for you...</p>
+    <div class="envelope" onclick="openLetter()">💌</div>
+    <button onclick="openLetter()">Open Your Letter ❤️</button>
+
+    <div id="letter" class="hidden message">
+      Dear My Special Person,
+
+      <br><br>
+      You are one of the most beautiful
+      parts of my world.
+
+      Every little conversation with you
+      makes my day more special.
+
+      I may not always have perfect words,
+      but I want you to know that
+      you are truly special to me.
+
+      <br><br>
+      Always keep smiling. ❤️
+
+      <br><br>
+      <b>With lots of love ♡</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="color:#ffb6cf">Why You're Special ✨</h2>
+    <div class="reason">💕 Your beautiful smile</div>
+    <div class="reason">🌸 Your lovely nature</div>
+    <div class="reason">❤️ The happiness you bring</div>
+    <div class="reason">✨ Simply being YOU</div>
+  </div>
+
+  <div class="card">
+    <h2 style="color:#ffb6cf">One Last Surprise 🎁</h2>
+    <p>There is something more I want to tell you...</p>
+    <button onclick="secret()">Unlock My Secret ❤️</button>
+    <div id="secret" class="hidden message">
+      No expensive gift can express
+      how special you are.
+
+      <br><br>
+      This little website is made
+      with lots of love, just for you.
+
+      <br><br>
+      YOU ARE SPECIAL. 💖
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ Just For You
+    <br> A little world of happiness ♡
+  </footer>
+</main>
+
+<script>
+function openLetter(){
+ document.getElementById("letter").style.display="block";
+}
+function secret(){
+ document.getElementById("secret").style.display="block";
+}
+function createHeart(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="♥";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(15+Math.random()*25)+"px";
+ h.style.animationDuration=(4+Math.random()*5)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),9000);
+}
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
